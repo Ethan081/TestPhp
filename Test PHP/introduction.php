@@ -1,17 +1,27 @@
 <?php
 
-$nom = "Zing";
-$prenom = "Etienne";
-$age = 34;
+class Employe{
+    public $nom;
+    public $prenom;
+    public $age;
 
-$nom2 = "Parto";
-$prenom2 = "Fred";
-$age2 = 52;
+    public function __construct($prenom, $nom, $age){
+        $this->nom = $nom;
+        $this->prenom = $prenom;
+        $this->age = $age;
+    }
 
-function presentation($nom, $prenom, $age){
-    var_dump("Bonjour, je suis $prenom $nom et j'ai $age ans");
-
+    public function presentation(){
+        var_dump("Bonjour, je suis $this->prenom $this->nom et j'ai $this->age ans");
+    }
 }
 
-presentation($nom, $prenom, $age);
-presentation($nom2, $prenom2, $age2);
+
+$employe1 = new Employe("Etienne","Zing", 34);
+
+$employe2 = new Employe("Orgy", "Fortan", 53);
+
+
+
+$employe1 -> presentation();
+$employe2 -> presentation();
